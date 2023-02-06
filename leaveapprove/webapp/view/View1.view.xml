@@ -1,0 +1,30 @@
+<mvc:View controllerName="com.sap.hr.leaveapprove.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content >
+            <SearchField></SearchField>
+           
+            <List mode="SingleSelectMaster" selectionChange="handleList" items="{/}">
+
+                <items>
+
+                    <StandardListItem title="{name}" counter="{leaveDays}" description="{leaveType]}" icon="sap-icon://accept"></StandardListItem>
+                    <!-- <StandardListItem title="Venu" counter="2" description="CasualLeave" icon="sap-icon://doctor"></StandardListItem>
+                    <StandardListItem title="Lohith" counter="3" description="EarnedLeave" icon="sap-icon://e-learning"></StandardListItem> -->
+
+                </items>
+
+            </List>
+        </content>
+        <footer>
+             <Bar>
+                <contentRight>
+                    <Button text="Approve" enabled="false" type="Accept" icon="sap-icon://accept" id="approveBtn"></Button>
+                    <Button text="Reject" enabled="false" type="Reject" icon="sap-icon://decline" id="rejectBtn"></Button>
+                </contentRight>
+             </Bar>
+           
+        </footer>
+    </Page>
+</mvc:View>
