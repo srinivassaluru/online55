@@ -1,0 +1,96 @@
+
+1. SAP BTP ? 
+
+   -> BTP ( Business Technology Platform ) 
+   
+        -> Cloud ( PAAS )  -> Platform as a service 
+		
+		   -> Full Stack Devlopment ( End to End Devlopment ) ( UI + Backend Data )
+		    
+
+ -> Approval Process 
+
+ -> Busines Rules ( Functional Users / Business Team ) -> excel -> DataDecison  
+ 
+ -> Workflow ( process automation )
+ 
+ -> Business Translations Hub 
+ 
+ -> SAP Event Mesh 
+ 
+ ..
+ ..
+ .
+ .
+ .
+ 
+ 
+
+			 -> MTA ( Multi Target Archieve Application Devlopment ) 
+			  
+			      -> Ui5 Front End ( en, ch, arabic ) 
+				  
+				  -> Database / HANA / SQLLITE / Postgres 
+				  
+				Server Technololigies ( Node JS ) + Abap on Hana ( cloud ) -> RAP   
+				
+				
+
+2. SAP BTP HANA ?
+
+CAPM -> Cloud Application Programming Model 
+
+  1. Abap on Hana ( RAP ) 
+  2. Nodejs 
+  3. Java Struts 
+    
+
+3. SAP S4/HANA Cloud Extensability ?
+
+   FIORI 
+     
+	   Adoption 
+	   In-App 
+	   SideBYSide
+
+
+4. SAP WEBIDE / SAP BAS ( Devloping UI5 Applications )
+
+   SAP WEBIDE -> Tool to Devlop only Ui5 Applications 
+              -> Neo 
+			  -> Advanced version of the Eclipse 
+			  -> Licen,
+			  
+   SAP BAS -> Tool to devlop not only ui5 applications / CAPM / S4/HANA 
+            -> CF 
+			-> Advanced version of the SAP WEBIDE 
+			-> Licen.
+			-> Cloud 
+			
+    Visual Studio COde : Freelicene 			
+					: Provides all features of SAP BAS 
+					: Local / Personal / without internet 
+					
+					
+5. UI5 / FIORI 
+   -- 
+   
+   Ui5 is a framework to devlop Responsive ( Web, Tab, Mobile Device ( Android / ios ) )
+   
+   FIORI  Design guidelines / Priniciple / Prototype 
+   
+   
+   *************
+   
+   FIORI LIB:
+   -
+   https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/#/detail/Apps('F6117')/S24OP
+   
+   FIORI GUideLines 
+   --
+   https://experience.sap.com/fiori-design-web/multiinput/#properties
+   
+   Implementation:
+   https://ui5.sap.com//#/entity/sap.m.MultiInput/sample/sap.m.sample.MultiInput/code
+   
+   
