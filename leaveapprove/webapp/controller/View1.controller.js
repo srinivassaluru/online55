@@ -185,5 +185,6 @@ sap.ui.define([
                 var itemsObj = leaveList.getBinding("items");
                 itemsObj.filter([aFilter]);
             }
+            // Added features 
         });
     });
