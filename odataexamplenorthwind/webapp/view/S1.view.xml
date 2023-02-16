@@ -5,17 +5,25 @@
                 <items>
                     <IconTabFilter icon="sap-icon://hint" text="Products" key="products" count="{localModel>/listProductCount}">
                         <SearchField placeholder="Enter Product Name to Sarch" search="handleProductNameSearch" />
-                        <List items="{odataModelNorthwind>/Products}" id="productList" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="handleProductListSelection" updateFinished="handleListUpdateFinished">
+                        <!-- Aggregation Binding {/{path:'odataModelNorthwind>/Products'}} -->
+                        <List items="{path:'odataModelNorthwind>/Products'}" id="productList" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="handleProductListSelection" updateFinished="handleListUpdateFinished">
                             <items>
-                                <ObjectListItem title="{odataModelNorthwind>ProductName}" number="{odataModelNorthwind>UnitPrice}">
+                                <ObjectListItem title="{path:'odataModelNorthwind>ProductName', formatter:'.online55Training.cascadeToUpper'}" number="{odataModelNorthwind>UnitPrice}">
                                     <attributes>
-                                        <ObjectAttribute text="{odataModelNorthwind>ProductID}" />
+                                        <ObjectAttribute text="{odataModelNorthwind>ProductID} /// {odataModelNorthwind>SupplierID}" />
                                         <ObjectAttribute text="{odataModelNorthwind>SupplierID}" />
                                         <ObjectAttribute text="{odataModelNorthwind>QuantityPerUnit}" />
                                     </attributes>
                                     <firstStatus>
+                                        <!-- Simple Binding-->
                                         <ObjectStatus text="{odataModelNorthwind>UnitsInStock}" />
                                     </firstStatus>
+                                    <secondStatus>
+                                        <!-- Complex Binding-->
+                                        <ObjectStatus text="{path:'odataModelNorthwind>UnitPrice'}" state="{path:'odataModelNorthwind>UnitPrice', formatter:'.online55Training.applyStateStatus'}" />
+                                        <!-- Expression Binding-->
+                                        <!-- <ObjectStatus text="{path:'odataModelNorthwind>UnitPrice'}" state="{= ${odataModelNorthwind>UnitPrice} > 50 ? 'Error' : 'Success'}" /> -->
+                                    </secondStatus>
                                 </ObjectListItem>
                             </items>
                         </List>
@@ -49,7 +57,7 @@
                         </Table>
                     </IconTabFilter>
                     <IconTabFilter icon="sap-icon://add-filter" key="others" text="Others" count="0">
-                        <Text text="Its I want to dispaly as a default"></Text>
+                        <Text text="Its I want to dispaly as a default" />
                     </IconTabFilter>
                 </items>
             </IconTabBar>

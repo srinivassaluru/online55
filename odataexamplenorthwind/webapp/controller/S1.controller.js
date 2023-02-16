@@ -2,15 +2,18 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     'sap/ui/model/Filter', 
     'sap/ui/model/FilterOperator',  // imported json model class
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "com/srinivas/sd/odataexamplenorthwind/utils/Formatter"
+
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,  Filter, FilterOperator, JSONModel) {
+    function (Controller,  Filter, FilterOperator, JSONModel, Formatter) {
         "use strict";
 
         return Controller.extend("com.srinivas.sd.odataexamplenorthwind.controller.S1", {
+            online55Training:Formatter,
             onInit: function () {
                 this.getView().setBusy(true);
                 var jsonModel = new JSONModel();
