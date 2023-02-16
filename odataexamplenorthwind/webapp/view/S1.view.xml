@@ -1,0 +1,55 @@
+<mvc:View controllerName="com.srinivas.sd.odataexamplenorthwind.controller.S1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding" select="handleIconTabSelect">
+                <items>
+                    <IconTabFilter icon="sap-icon://hint" text="Products" key="products">
+                        <SearchField placeholder="Enter Product Name to Sarch" search="handleProductNameSearch" />
+                        <List items="{odataModelNorthwind>/Products}" id="productList" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="handleProductListSelection">
+                            <items>
+                                <ObjectListItem title="{odataModelNorthwind>ProductName}" number="{odataModelNorthwind>UnitPrice}">
+                                    <attributes>
+                                        <ObjectAttribute text="{odataModelNorthwind>ProductID}" />
+                                        <ObjectAttribute text="{odataModelNorthwind>SupplierID}" />
+                                        <ObjectAttribute text="{odataModelNorthwind>QuantityPerUnit}" />
+                                    </attributes>
+                                    <firstStatus>
+                                        <ObjectStatus text="{odataModelNorthwind>UnitsInStock}" />
+                                    </firstStatus>
+                                </ObjectListItem>
+                            </items>
+                        </List>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://attachment" key="suppliers" count="3" text="Suppliers">
+                        <Table items="{odataModelNorthwind>/Suppliers}" id="supplierTable">
+                            <columns>
+                                <Column>
+                                    <Text text="SupplierID" />
+                                </Column>
+                                <Column>
+                                    <Text text="CompanyName" />
+                                </Column>
+                                <Column>
+                                    <Text text="ContactName" />
+                                </Column>
+                                <Column>
+                                    <Text text="Address" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{odataModelNorthwind>SupplierID}" />
+                                        <Text text="{odataModelNorthwind>CompanyName}" />
+                                        <Text text="{odataModelNorthwind>ContactName}" />
+                                        <Text text="{odataModelNorthwind>Address}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

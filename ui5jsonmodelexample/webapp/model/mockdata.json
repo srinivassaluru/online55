@@ -1,0 +1,34 @@
+{
+   "employeesData":[
+       {
+           "empName":"Sarath",
+           "empId":1000,
+           "departName":"CSE",
+           "empSalary":12344
+       },
+       {
+           "empName":"Suheel",
+           "empId":1001,
+           "departName":"ECE",
+           "empSalary":12344
+       },
+       {
+           "empName":"Lohith",
+           "empId":1001,
+           "departName":"EEE",
+           "empSalary":12344
+       },
+       {
+           "empName":"VENU",
+           "empId":1004,
+           "departName":"CSE",
+           "empSalary":12344
+       },
+       {
+           "empName":"Sarath",
+           "empId":1000,
+           "departName":"CSE",
+           "empSalary":12344
+       }
+   ]
+}

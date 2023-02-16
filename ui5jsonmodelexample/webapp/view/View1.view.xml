@@ -1,0 +1,34 @@
+<mvc:View controllerName="com.srinivas.feb9.ui5jsonmodelexample.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+                <Table noDataText="No Data" showNoData="true" items="{dummyDataModel>/employeesData}">
+                    <columns>
+                        <Column>
+                            <Text text="EmpName"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="EmpId"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="DepartName"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="Emp Salary"></Text>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem> <!-- Row -->
+                            <cells>
+                                <Text text="{dummyDataModel>empName}"></Text>
+                                <Text text="{dummyDataModel>empId}"></Text>
+                                <Text text="{dummyDataModel>departName}"></Text>
+                                <Text text="{dummyDataModel>empSalary}"></Text>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+        </content>
+    </Page>
+</mvc:View>
