@@ -1,11 +1,11 @@
 <mvc:View controllerName="com.srinivas.sd.odataexamplenorthwind.controller.S1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-            <IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding" select="handleIconTabSelect">
+            <IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding" select="handleIconTabSelect" selectedKey="others">
                 <items>
-                    <IconTabFilter icon="sap-icon://hint" text="Products" key="products">
+                    <IconTabFilter icon="sap-icon://hint" text="Products" key="products" count="{localModel>/listProductCount}">
                         <SearchField placeholder="Enter Product Name to Sarch" search="handleProductNameSearch" />
-                        <List items="{odataModelNorthwind>/Products}" id="productList" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="handleProductListSelection">
+                        <List items="{odataModelNorthwind>/Products}" id="productList" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="handleProductListSelection" updateFinished="handleListUpdateFinished">
                             <items>
                                 <ObjectListItem title="{odataModelNorthwind>ProductName}" number="{odataModelNorthwind>UnitPrice}">
                                     <attributes>
@@ -20,8 +20,8 @@
                             </items>
                         </List>
                     </IconTabFilter>
-                    <IconTabFilter icon="sap-icon://attachment" key="suppliers" count="3" text="Suppliers">
-                        <Table items="{odataModelNorthwind>/Suppliers}" id="supplierTable">
+                    <IconTabFilter icon="sap-icon://attachment" key="suppliers" count="{localModel>/tableSupplierCount}" text="Suppliers">
+                        <Table items="{odataModelNorthwind>/Suppliers}" id="supplierTable" updateFinished="handleTableUpdateFinished">
                             <columns>
                                 <Column>
                                     <Text text="SupplierID" />
@@ -47,6 +47,9 @@
                                 </ColumnListItem>
                             </items>
                         </Table>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://add-filter" key="others" text="Others" count="0">
+                        <Text text="Its I want to dispaly as a default"></Text>
                     </IconTabFilter>
                 </items>
             </IconTabBar>

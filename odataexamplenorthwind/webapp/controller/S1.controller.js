@@ -1,17 +1,21 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     'sap/ui/model/Filter', 
-    'sap/ui/model/FilterOperator'  // imported json model class
+    'sap/ui/model/FilterOperator',  // imported json model class
+    "sap/ui/model/json/JSONModel"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,  Filter, FilterOperator) {
+    function (Controller,  Filter, FilterOperator, JSONModel) {
         "use strict";
 
         return Controller.extend("com.srinivas.sd.odataexamplenorthwind.controller.S1", {
             onInit: function () {
-
+                this.getView().setBusy(true);
+                var jsonModel = new JSONModel();
+                // alert(actualCount);
+                this.getView().setModel(jsonModel,"localModel");
             },
             handleProductNameSearch: function(oEvent){
                 var query = oEvent.getParameter("query");
@@ -41,7 +45,7 @@ sap.ui.define([
                     
                     var leaveList = this.getView().byId("supplierTable"); // <List mode="SingleSelectMaster" selectionChange="handleList" items="{localModel>/leaves}" id="leaveList">
                     var itemsObj = leaveList.getBinding("items");
-                    itemsObj.filter([aFilter]);
+                    // itemsObj.filter([aFilter]);
 
                 }
             },
@@ -55,6 +59,23 @@ sap.ui.define([
                 var sObject = this.getView().getModel("odataModelNorthwind").getProperty(sSelectedItem.getBindingContextPath())
                 // alert(sObject.ProductID);
                 this._supplierID  = sObject.SupplierID;
+            },
+
+            handleListUpdateFinished: function(oEvent){
+                this.getView().setBusy(false);
+                var actualCount = oEvent.getParameter("total");
+                var jsonModel = this.getView().getModel("localModel");
+                jsonModel.setProperty("/listProductCount", actualCount);
+               
+
+            },
+            handleTableUpdateFinished: function(oEvent){
+                this.getView().setBusy(false);
+                var actualCount = oEvent.getParameter("total");
+                var jsonModel = this.getView().getModel("localModel");
+                jsonModel.setProperty("/tableSupplierCount", actualCount);
+               
+
             }
         });
     });
