@@ -1,0 +1,9 @@
+<mvc:View controllerName="com.srinivas.routingexample.controller.S3"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="S3">
+        <content >
+              <Button text="Home" press="handleHome"></Button>
+        </content>
+    </Page>
+</mvc:View>
