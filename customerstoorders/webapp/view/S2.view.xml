@@ -1,0 +1,34 @@
+<mvc:View controllerName="com.ui5.srinivas.customerstoorders.controller.S2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="Order Details">
+        <content >
+
+            <Table headerText="Order Details" id="orderTable">
+                <columns>
+                    <Column>
+                        <Text text="Order ID"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Employee ID"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Order Date"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Shipped Date"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Ship Name"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Ship Address"></Text>
+                    </Column>
+                </columns>
+                <items>
+
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

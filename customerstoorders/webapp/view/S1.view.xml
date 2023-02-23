@@ -1,0 +1,21 @@
+<mvc:View controllerName="com.ui5.srinivas.customerstoorders.controller.S1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+            <List items="{/Customers}" headerText="Customers ({localModel>/customersCount}) " updateFinished="handleListUpdate" mode="SingleSelectMaster" selectionChange="handleCustomerSelect">
+                <items>
+                    <ObjectListItem number="{CustomerID}" title="{ContactName}">
+                        <attributes>
+                            <ObjectAttribute text="{ContactTitle}"></ObjectAttribute>
+                            <ObjectAttribute text="{Address}"></ObjectAttribute>
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus text="{Phone}" state="Success"></ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

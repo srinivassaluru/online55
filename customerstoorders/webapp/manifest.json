@@ -1,7 +1,7 @@
 {
   "_version": "1.48.0",
   "sap.app": {
-    "id": "com.srinivas.routingexample",
+    "id": "com.ui5.srinivas.customerstoorders",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,11 +13,11 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.8.4",
-      "toolsId": "d73d198b-6957-4518-b8db-0718cc0726a2"
+      "toolsId": "91b29638-a05e-4e62-aa41-d2fe7480dea9"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/",
+        "uri": "/v2/northwind/northwind.svc/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -66,7 +66,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.srinivas.routingexample.i18n.i18n"
+          "bundleName": "com.ui5.srinivas.customerstoorders.i18n.i18n"
         }
       },
       "": {
@@ -87,7 +87,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "com.srinivas.routingexample.view",
+        "viewPath": "com.ui5.srinivas.customerstoorders.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
@@ -101,17 +101,10 @@
           ]
         },
         {
-          "name": "S2Route",
-          "pattern": "detailS2/:name:/:id:",
+          "name": "orderDetails",
+          "pattern": "orderDetails/{customerContext}",
           "target": [
             "TargetS2"
-          ]
-        },
-        {
-          "name": "s3Route",
-          "pattern": "detailS3",
-          "target": [
-            "TargetS3"
           ]
         }
       ],
@@ -124,17 +117,16 @@
           "viewName": "S1"
         },
         "TargetS2": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
           "viewId": "S2",
           "viewName": "S2"
-        },
-        "TargetS3": {
-          "viewId": "S3",
-          "viewName": "S3"
         }
       }
     },
     "rootView": {
-      "viewName": "com.srinivas.routingexample.view.App",
+      "viewName": "com.ui5.srinivas.customerstoorders.view.App",
       "type": "XML",
       "async": true,
       "id": "App"

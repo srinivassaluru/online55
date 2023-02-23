@@ -9,6 +9,13 @@ sap.ui.define([
 
         return Controller.extend("com.srinivas.routingexample.controller.S2", {
             onInit: function () {
+                var oRouter = this.getOwnerComponent().getRouter();
+                oRouter.getRoute("S2Route").attachPatternMatched(this.readMyValues, this);
+            },
+
+            readMyValues: function(oEvent){
+                 var readParametersFromS1 = oEvent.getParameter("arguments");
+                 console.log(readParametersFromS1);
 
             },
             handleNavigateToS3: function(){

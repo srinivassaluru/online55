@@ -11,14 +11,17 @@ sap.ui.define([
             onInit: function () {
 
             },
-            handleNavigationToS2: function(){
+            handleNavigationToS2: function () {
                 // get the router 
                 var routerobj = this.getOwnerComponent().getRouter();
-
                 // use navto method ,                 // pass the name of the route
+                // routerobj.navTo("S2Route"); // Passing without Parameters
+                var navigateObj = {
+                    "name": "Srinivas",
+                    "id": 123
+                };
+                routerobj.navTo("S2Route", navigateObj); // Passing with Parameters
 
-
-                routerobj.navTo("S2Route");
 
 
             }
